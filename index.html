@@ -1,124 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>欢迎来到EMUA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<style>
-body {
-  background-image: url("https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  width: 90%;
-}
-
-.title {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.version {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.channel {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.join-button,
-.popup-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.join-button {
-  background-color: #4CAF50;
-  margin-right: 10px;
-}
-
-.popup-button {
-  background-color: #f44336;
-}
-
-.join-button:hover,
-.popup-button:hover {
-  background-color: #45a049;
-}
-
-/* 手机样式 */
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 90%;
-  }
+  <title>欢迎来到EMUA</title>
+  <style>
+    body {
+      background-image: url("https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      text-align: center;
+      margin-top: 200px;
+      color: white;
+    }
+    .join-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .popup-button {
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    function joinServer() {
+      // 替换为你的服务器IP和端口
+      var serverIP = "frp-fly.top";
+      var serverPort = "10643";
   
-  .title {
-    font-size: 24px;
-  }
+      // 启动我的世界并加入服务器
+      window.open("minecraft://?addExternalServer=§3§lEMUA§e[beta]|119.188.240.80:34161/");
+    }
   
-  .subtitle {
-    font-size: 18px;
-  }
-  
-  .version,
-  .channel {
-    font-size: 14px;
-  }
-}
-</style>
-<script>
-function joinServer() {
-  // 替换为你的服务器IP和端口
-  var serverIP = "119.188.240.80";
-  var serverPort = "34161";
-  // 启动我的世界并加入服务器
-  window.open("minecraft://?addExternalServer=§3§lEMUA§e[beta]|119.188.240.80:34161/");
-}
-
-function showPopup() {
-  alert("加入QQ频道获取IP与端口！");
-}
-</script>
+    function showPopup() {
+      alert("加入QQ频道获取IP与端口！");
+    }
+  </script>
 </head>
 <body>
-<div class="container">
-  <h1 class="title">欢迎加入EMUA服务器!</h1>
-  <p class="subtitle">加入我们的世界生存服务器，与所有玩家一起探索无尽的可能性！</p>
-  <p class="version">游戏版本: Bedrock 1.20.12</p>
-  <p class="channel">加入QQ频道: x59v8wpsgt</p>
-  <div class="button-container">
+  <div class="container">
+    <h1>欢迎加入EMUA服务器!</h1>
+    <p>加入我们的世界生存服务器，与所有玩家一起探索无尽的可能性！</p>
+    <p>游戏版本:Bedrock 1.20.12</p>
+    <p>加入QQ频道:x59v8wpsgt</p>
     <button class="join-button" onclick="joinServer()">一键加入服务器</button>
     <button class="popup-button" onclick="showPopup()">手动加入</button>
   </div>
-</div>
 </body>
 </html>
