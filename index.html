@@ -6,7 +6,7 @@
     body {
       background-image: url("https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg");
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 100%;
     }
     .container {
       text-align: center;
@@ -29,6 +29,17 @@
       cursor: pointer;
       font-size: 16px;
     }
+    .github-button {
+      position: fixed;
+      left: 10px;
+      bottom: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
   </style>
   <script>
     function joinServer() {
@@ -41,7 +52,11 @@
     }
   
     function showPopup() {
-      alert("加入QQ频道获取IP与端口！");
+      alert("加入QQ群获取支持！");
+    }
+    
+    function goToGitHub() {
+      window.open("https://github.com");
     }
   </script>
 </head>
@@ -50,9 +65,10 @@
     <h1>欢迎加入EMUA服务器!</h1>
     <p>加入我们的世界生存服务器，与所有玩家一起探索无尽的可能性！</p>
     <p>游戏版本:Bedrock 1.20.12</p>
-    <p>加入QQ频道:x59v8wpsgt</p>
+    <p>加入QQ群聊:488294355</p>
     <button class="join-button" onclick="joinServer()">一键加入服务器</button>
     <button class="popup-button" onclick="showPopup()">手动加入</button>
+    <button class="github-button" onclick="goToGitHub()"></button>
   </div>
 </body>
 </html>
