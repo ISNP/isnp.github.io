@@ -1,74 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>欢迎来到EMUA</title>
-  <style>
-    body {
-      background-image: url("https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg");
-      background-repeat: no-repeat;
-      background-size: 200% 400%;
-    }
-    .container {
-      text-align: center;
-      margin-top: 200px;
-      color: white;
-    }
-    .join-button {
-      padding: 40px 80px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 64px;
-    }
-    .popup-button {
-      padding: 40px 80px;
-      background-color: #f44336;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 64px;
-    }
-    .github-button {
-      position: fixed;
-      left: 40px;
-      bottom: 40px;
-      padding: 40px 80px;
-      background-color: #333;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 64px;
-    }
-  </style>
-  <script>
-    function joinServer() {
-      // 替换为你的服务器IP和端口
-      var serverIP = "frp-fly.top";
-      var serverPort = "10643";
-  
-      // 启动我的世界并加入服务器
-      window.open("minecraft://?addExternalServer=§3§l测试§e[beta]|119.188.240.80:56918/");
-    }
-  
-    function showPopup() {
-      alert("加入QQ群获取支持！");
-    }
-    
-    function goToGitHub() {
-      window.open("https://github.com");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 服务器宣传</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: url('https://wallpapertag.com/wallpaper/full/c/4/b/238347-full-size-minecraft-hd-wallpaper-1920x1080.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(240, 240, 240, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative; /* Ensure the container is positioned */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .server-info {
+            margin-top: 20px;
+        }
+        .server-info p {
+            font-size: 18px;
+        }
+        .green-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1; /* Ensure it's above other elements */
+        }
+        .green-button:hover {
+            background-color: #45a049;
+        }
+        .red-button {
+            position: fixed;
+            bottom: 70px; /* Adjusted position */
+            right: 20px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1; /* Ensure it's above other elements */
+        }
+        .red-button:hover {
+            background-color: #da190b;
+        }
+        .minecraft-button {
+            text-align: center;
+            margin-top: 20px; /* Space below the title */
+            clear: both; /* Ensure it doesn't float */
+        }
+        .minecraft-button button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .minecraft-button button:hover {
+            background-color: #005F6B;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>欢迎加入EMUA服务器!</h1>
-    <p>加入我们的世界生存服务器，与所有玩家一起探索无尽的可能性！</p>
-    <p>游戏版本:Bedrock 1.20.12</p>
-    <p>加入QQ群聊:488294355</p>
-    <button class="join-button" onclick="joinServer()">一键加入服务器</button>
-    <button class="popup-button" onclick="showPopup()">手动加入</button>
-    <button class="github-button" onclick="goToGitHub()"></button>
-  </div>
+    <div class="container">
+        <h1>EMUA生存服</h1>
+        <p>原味生存，经典乐趣</p>
+        <div class="server-info">
+            <h2>服务器信息</h2>
+            <p>服务器地址: 119.188.240.80 端口: 62473</p>
+            <p>版本: 1.21.1基岩版(暂不支持JAVA互通)</p>
+        </div>
+        <p>点击下方按钮可一键加入服务器</p>
+
+        <!-- Button for opening Minecraft server -->
+        <div class="minecraft-button">
+            <button onclick="openMinecraft()">一键加入服务器</button>
+        </div>
+    </div>
+    
+    <!-- Green button for copying text to clipboard -->
+    <button class="green-button" onclick="copyToClipboard('119.188.240.80:62473')">复制到剪切板</button>
+
+    <!-- Red button for generating and downloading random code -->
+    <button class="red-button" onclick="generateAndDownload()">生成随机码</button>
+
+    <!-- JavaScript functions -->
+    <script>
+        function openMinecraft() {
+            window.open('minecraft://?addExternalServer=§3§lEMUA§e[生存服]|119.188.240.80:62473/');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => alert('已复制到剪切板,您可能需要解析后进入' + text))
+                .catch(err => console.error('无法复制: ', err));
+        }
+
+        function generateAndDownload() {
+            let randomCode = generateRandomCode();
+            let filename = 'random_code.txt';
+            let blob = new Blob([randomCode], { type: 'text/plain' });
+            let link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+
+        function generateRandomCode() {
+            let randomCode = '';
+            const characters = '0123456789';
+            const codeLength = 16;
+            for (let i = 0; i < codeLength; i++) {
+                randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return randomCode;
+        }
+    </script>
 </body>
 </html>
