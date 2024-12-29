@@ -108,8 +108,8 @@
     <!-- Green button for copying text to clipboard -->
     <button class="green-button" onclick="copyToClipboard()">下载minecraft</button>
 
-    <!-- Red button for generating and downloading random code -->
-    <button class="red-button" onclick="generateAndDownload()">生成随机码</button>
+    <!-- Red button for redirecting to X webpage -->
+    <button class="red-button" onclick="redirectToXWebpage()">跳转至X网页</button>
 
     <!-- JavaScript functions -->
     <script>
@@ -117,29 +117,12 @@
             window.open('minecraft://?addExternalServer=§3§l生存服|e52680.mc5173.cn:10110/');
         }
 
-        function copyToClipboard(text) {
+        function copyToClipboard() {
             window.open('https://www.123865.com/s/9HM9-TQ37A?from=mcapks.net')
-
         }
 
-        function generateAndDownload() {
-            let randomCode = generateRandomCode();
-            let filename = 'random_code.txt';
-            let blob = new Blob([randomCode], { type: 'text/plain' });
-            let link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = filename;
-            link.click();
-        }
-
-        function generateRandomCode() {
-            let randomCode = '';
-            const characters = '0123456789';
-            const codeLength = 16;
-            for (let i = 0; i < codeLength; i++) {
-                randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
-            }
-            return randomCode;
+        function redirectToXWebpage() {
+            window.open('https://isnp.github.io/java');
         }
     </script>
 </body>
